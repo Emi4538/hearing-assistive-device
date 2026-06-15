@@ -68,19 +68,43 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 
 ### Hearing Aid Battery: LIR2450
 
+
 **Selected:** LIR2450 rechargeable coin cell (⌀24 × 5mm, 120mAh, 3.6V)
 
 **Why:**
 - **User-replaceable**: Standard coin cell form factor, easy to swap
 - **Rechargeable**: Li-Ion chemistry, can be charged in case
 - **Compact**: ⌀24mm fits in BTE housing (mounted vertically: 5mm width × 24mm height)
-- **Good capacity**: 120mAh provides 20-30 hours runtime
+- **Good capacity**: 120mAh provides realistic runtime for daily use
+
+**Realistic Battery Life (calculated):**
+- **Idle (99% idle, standby):** ~12 hours
+- **Normal use (continuous audio streaming):** ~5.7 hours
+- **Heavy use (BLE + DSP + high volume):** ~2.1 hours
+
+**Power Consumption Breakdown:**
+- nRF5340 (BLE Audio): ~10-15mA
+- SSM2518 Amplifier: ~5-10mA
+- 4× IMP34DT05 Microphones: ~4mA
+- nPM1300 PMIC: ~1-2mA
+- Other (LED, etc.): ~1mA
+- **Total average:** ~21-32mA
+
+**Charging Configuration (nPM1300):**
+- **Recommended charge current:** 0.5C = 60mA (cell-friendly)
+- **Maximum charge current:** 1C = 120mA (faster but stresses cell)
+- **Realistic charging time:**
+  - Conservative (0.5C): ~2.5 hours
+  - Fast (1C): ~1.2 hours
+  - *(Includes CC/CV curve factor of 1.2-1.5×)*
+
+**Design decision for v1:** Configure nPM1300 for 60mA charging (0.5C) to prioritize cell longevity (400-500 cycles target) over fast charging.
 
 **Alternatives considered:**
-- **LiPo pouch cell (e.g., 15×20×3mm)**: More compact, but not user-replaceable
-- **Zinc-Air batteries**: Standard for hearing aids, but not rechargeable
+- **LiPo pouch cell (e.g., 15×20×3mm, 100mAh):** More compact, but not user-replaceable
+- **Zinc-Air batteries:** Standard for hearing aids, but not rechargeable
 
-**Design note:** Battery is mounted vertically in the housing (5mm width × 24mm height), fitting within the 15mm housing width.
+**Design note:** Battery is mounted vertically in the housing (5mm width × 24mm height), fitting within the 15mm housing width. User swaps battery in charging case overnight.
 
 ---
 
