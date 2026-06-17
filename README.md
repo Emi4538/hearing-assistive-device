@@ -1,6 +1,6 @@
 # Open-Source Hearing Assistive Device
 
-## ⚠️ WORK IN PROGRESS
+##  WORK IN PROGRESS
 
 This project is currently under active development. Expected completion: Late 2026 or early 2027.
 
@@ -18,19 +18,19 @@ An open-source hearing assistive device designed to provide high-quality audio a
 
 ## Current Status (June 2026)
 
-### ✅ Completed
+### Completed
 - Component selection and evaluation
 - Initial schematic design (audio path, power management)
 - RF antenna selection (Antenova M20047-1)
 - Battery management architecture
 
-### 🚧 In Progress
+###  In Progress
 - Complete schematic review and finalization
 - Battery integration and charging circuit design
 - PCB layout (4-layer HDI)
 - Firmware development (DSP algorithms, BLE stack)
 
-### 📋 Planned
+###  Planned
 - Prototype manufacturing and testing
 - RF matching and optimization
 - Audio quality tuning
