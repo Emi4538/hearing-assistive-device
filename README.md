@@ -45,7 +45,7 @@ An open-source hearing assistive device designed to provide high-quality audio a
 - Latency: < 20ms
 
 ### Connectivity
-- Bluetooth 5.3 LE Audio
+- Bluetooth 5.4 LE Audio
 - Range: ~10m
 
 ### Power
