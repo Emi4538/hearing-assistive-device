@@ -9,7 +9,7 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 ### Key Design Goals:
 - **Wearable form factor**: Must be comfortable to wear all day, discreet enough for daily use
 - **High-quality audio**: Balanced armature speakers, DSP processing, low latency (<20ms)
-- **Modern connectivity**: Bluetooth 5.3 LE Audio for smartphone streaming
+- **Modern connectivity**: Bluetooth 5.4 LE Audio for smartphone streaming
 - **User-replaceable battery**: Case battery charges 2× hearing aids
 - **Open source**: Hardware (CERN OHL v2) + Firmware (MIT License)
 
@@ -18,7 +18,7 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 - Dimensions: ~33 × 40 × 12 mm (estimated)
 - Battery life: 8 hours (with LIR2450)
 - Audio: 4× MEMS microphones, 2-3× balanced armature speakers
-- Connectivity: Bluetooth 5.3 LE Audio
+- Connectivity: Bluetooth 5.4 LE Audio
 
 ---
 
@@ -31,7 +31,7 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 **Why:**
 - **Dual-core architecture**: Application core (Cortex-M33, 128MHz) + Network core (Cortex-M33, 64MHz)
 - **Integrated DSP**: Hardware-accelerated audio processing
-- **Bluetooth 5.3 LE Audio**: Native support for LC3 codec, low-latency audio streaming
+- **Bluetooth 5.4 LE Audio**: Native support for LC3 codec, low-latency audio streaming
 - **Ultra-low power**: Optimized for battery-operated wearables
 - **Excellent SDK support**: nRF Connect SDK with Zephyr RTOS
 - **Small package**: WLCSP 4.4 × 4.0 mm
@@ -213,7 +213,7 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 
 **Why:**
 - **Compact**: 7.0 × 7.0 × 0.9 mm
-- **2.4GHz optimized**: Perfect for Bluetooth 5.3
+- **2.4GHz optimized**: Perfect for Bluetooth 5.4
 - **Good performance**: -2dBi gain, suitable for BTE form factor
 - **Well-documented**: Reference design available
 
