@@ -15,7 +15,7 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 
 ### Target Specifications:
 - Form factor: BTE (Behind-The-Ear)
-- Dimensions: ~33 × 40 × 12 mm (estimated)
+- Dimensions: 55x15x25mm (estimated)
 - Battery life: 8 hours (with LIR2450)
 - Audio: 4× MEMS microphones, 2-3× balanced armature speakers
 - Connectivity: Bluetooth 5.4 LE Audio
