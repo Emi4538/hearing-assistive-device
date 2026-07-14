@@ -2,7 +2,7 @@
 
 ##  WORK IN PROGRESS
 
-This project is currently under active development. Expected completion: Late 2026 or early 2027.
+This project is currently under active development. Expected completion:early 2027
 
 ## Project Overview
 
@@ -21,7 +21,6 @@ An open-source hearing assistive device designed to provide high-quality audio a
 ### Completed
 - Component selection and evaluation
 - Initial schematic design (audio path, power management)
-- RF antenna selection (Antenova M20047-1)
 - Battery management architecture
 
 ###  In Progress
@@ -39,7 +38,7 @@ An open-source hearing assistive device designed to provide high-quality audio a
 ## Technical Specifications
 
 ### Audio Processing
-- Audio SoC: Nordic nrf5340 (or similar)
+- Audio SoC: Nordic nrf5340 
 - DSP capabilities: ANC, adaptive feedback cancellation
 - Sample rate: 48kHz
 - Latency: < 20ms
@@ -49,7 +48,7 @@ An open-source hearing assistive device designed to provide high-quality audio a
 - Range: ~10m
 
 ### Power
-- Battery: LiPo coin cell battery (target: 120mAh)
+- Battery: LIR2450 (120mAh,24x5mm)
 - Charging: Pogo-pin contact charging
 - Battery protection: Over-charge, over-discharge, short-circuit, temperature monitoring (NTC)
 
