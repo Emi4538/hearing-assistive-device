@@ -16,7 +16,7 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 ### Target Specifications:
 - Form factor: BTE (Behind-The-Ear)
 - Dimensions: 55x15x25mm (estimated)
-- Battery life: 8 hours (with LIR2450)
+- Battery life: 5.7 hours (with LIR2450)
 - Audio: 4× MEMS microphones, 2-3× balanced armature speakers
 - Connectivity: Bluetooth 5.4 LE Audio
 
@@ -37,10 +37,8 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 - **Small package**: WLCSP 4.4 × 4.0 mm
 
 **Alternatives considered:**
-- **Qualcomm QCC3040**: Good audio features, but more complex licensing and larger package
-- **ESP32**: Too power-hungry for hearing aid application (100mA+ vs nRF5340's ~10mA)
-- **STM32 + external BLE**: More complex, higher BOM cost, larger footprint
-
+- **Qualcomm QCC5181**: Good audio features, but more complex licensing and larger package
+- **Realtek RTL8763E Series**: availability constraints
 **Trade-offs:**
 - WLCSP package requires professional PCB assembly (JLCPCB SMD service)
 - Steeper learning curve compared to Arduino-based platforms
@@ -100,9 +98,6 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 
 **Design decision for v1:** Configure nPM1300 for 60mA charging (0.5C) to prioritize cell longevity (400-500 cycles target) over fast charging.
 
-**Alternatives considered:**
-- **LiPo pouch cell (e.g., 15×20×3mm, 100mAh):** More compact, but not user-replaceable
-- **Zinc-Air batteries:** Standard for hearing aids, but not rechargeable
 
 **Design note:** Battery is mounted vertically in the housing (5mm width × 24mm height), fitting within the 15mm housing width. User swaps battery in charging case overnight.
 
@@ -206,32 +201,18 @@ Unlike existing open-source hearing aid projects (Tympan, openMHA, openHA), whic
 ---
 
 ## Connectivity
+### Component: Johanson 2450AT18B100 (2.4 GHz Ceramic Chip Antenna)
 
-### Antenna: Antenova M20047-1
+**Why this component was chosen:**
+* **Compact Footprint:** The ultra-small 3.2 x 1.6 mm SMD package saves critical PCB real estate compared to traditional PCB trace antennas.
+* **Design Simplicity:** Frees up board space by eliminating the large keep-out zones required by inverted-F or meander trace antennas.
+* **Reliable Performance:** Specifically optimized for 2.4 GHz ISM bands (BLE, Wi-Fi, Zigbee), offering high radiation efficiency and stable return loss in dense layouts.
 
-**Selected:** Antenova M20047-1 2.4GHz chip antenna
+**Required External Components & Layout Rules:**
+* **Impedance Matching Network:** A Pi-network (typically 2 capacitors and 1 inductor) is required to tune the antenna to 50Ω. *Note: Exact values must be tuned based on the final PCB ground plane.*
+* **DC Blocking Capacitor:** A series capacitor (typically 100pF – 1nF) is required if the RF transceiver output pin carries a DC bias.
+* **Strict Keep-out Zone:** All inner/outer layer copper, traces, and ground planes must be completely cleared beneath the antenna element to prevent detuning.
 
-**Why:**
-- **Compact**: 7.0 × 7.0 × 0.9 mm
-- **2.4GHz optimized**: Perfect for Bluetooth 5.4
-- **Good performance**: -2dBi gain, suitable for BTE form factor
-- **Well-documented**: Reference design available
-
-**Critical design constraint:**
-- **Ground plane requirement**: Minimum 25×10mm (recommended 25×25mm) continuous ground plane under antenna
-- **Placement**: Must be at PCB edge
-- **Keep-out zone**: No traces, vias, or components under ground plane
-
-**RF matching network:**
-- π-filter: 2× capacitors + 1× inductor (values from nRF5340 datasheet)
-- 50Ω impedance matching
-- All 0402 package
-
-**Alternatives considered:**
-- **PCB antenna (inverted-F)**: Free, but requires more space and tuning
-- **Ceramic antenna (e.g., Johanson 2450BM15A0015)**: Similar size, but Antenova has better documentation
-
----
 
 ### Crystals
 
