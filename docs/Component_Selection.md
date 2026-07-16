@@ -1,6 +1,6 @@
 # Component Selection & Design Decisions
 
-*Last updated: June 2026*
+*Last updated: July 2026*
 
 ## Project Philosophy
 
@@ -389,10 +389,10 @@ This project is inspired by and builds upon existing open-source hearing aid pro
 | Feature | Existing Projects | This Project |
 |---------|------------------|--------------|
 | **Form factor** | Development board (hand-held) | Real BTE hearing aid (wearable) |
-| **Size** | 100×80×30mm+ | ~33×40×12mm |
+| **Size** | 100×80×30mm+ | ~55x15x25mm |
 | **Use case** | Lab research | Daily wear |
 | **Audio SoC** | Teensy 3.6 (older) | Nordic nRF5340 (modern) |
-| **Connectivity** | None or basic BLE | Bluetooth 5.3 LE Audio |
+| **Connectivity** | None or basic BLE | Bluetooth 5.4 LE Audio |
 | **Battery** | USB charging | User-replaceable coin cell + charging case |
 | **Microphones** | 1-2× | 4× (beamforming capable) |
 | **Speakers** | Dynamic receiver | Balanced armature (high-end) |
