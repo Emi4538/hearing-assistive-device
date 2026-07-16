@@ -2,7 +2,7 @@
 
 ##  WORK IN PROGRESS
 
-This project is currently under active development. Expected completion:early 2027
+This project is currently under active development. Expected completion: Early 2027
 
 ## Project Overview
 
@@ -85,4 +85,4 @@ This project is in early stages. Contributions welcome in:
 
 ---
 
-*Last updated: June 2026*
+*Last updated: July 2026*
